@@ -1,0 +1,5 @@
+[MESSAGE-CONTROL]
+disable=global-statement,unused-argument,consider-using-f-string
+
+[BASIC]
+good-names=ip

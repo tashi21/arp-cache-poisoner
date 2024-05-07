@@ -1,0 +1,152 @@
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-05-04 16:01 IST
+NSE: Loaded 155 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 16:01
+Completed NSE at 16:01, 0.00s elapsed
+Initiating NSE at 16:01
+Completed NSE at 16:01, 0.00s elapsed
+Initiating NSE at 16:01
+Completed NSE at 16:01, 0.00s elapsed
+Initiating Ping Scan at 16:01
+Scanning 10.1.0.100 [4 ports]
+Completed Ping Scan at 16:01, 0.00s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 16:01
+Completed Parallel DNS resolution of 1 host. at 16:01, 0.00s elapsed
+Initiating SYN Stealth Scan at 16:01
+Scanning internet.ashoka.edu.in (10.1.0.100) [1000 ports]
+Discovered open port 80/tcp on 10.1.0.100
+Discovered open port 22/tcp on 10.1.0.100
+Discovered open port 1000/tcp on 10.1.0.100
+Discovered open port 8090/tcp on 10.1.0.100
+Completed SYN Stealth Scan at 16:01, 4.60s elapsed (1000 total ports)
+Initiating Service scan at 16:01
+Scanning 4 services on internet.ashoka.edu.in (10.1.0.100)
+Service scan Timing: About 75.00% done; ETC: 16:04 (0:00:45 remaining)
+Completed Service scan at 16:04, 153.13s elapsed (4 services on 1 host)
+Initiating OS detection (try #1) against internet.ashoka.edu.in (10.1.0.100)
+Retrying OS detection (try #2) against internet.ashoka.edu.in (10.1.0.100)
+Initiating Traceroute at 16:04
+Completed Traceroute at 16:04, 0.02s elapsed
+Initiating Parallel DNS resolution of 1 host. at 16:04
+Completed Parallel DNS resolution of 1 host. at 16:04, 0.03s elapsed
+NSE: Script scanning 10.1.0.100.
+Initiating NSE at 16:04
+Completed NSE at 16:04, 5.03s elapsed
+Initiating NSE at 16:04
+Completed NSE at 16:04, 1.37s elapsed
+Initiating NSE at 16:04
+Completed NSE at 16:04, 0.00s elapsed
+Nmap scan report for internet.ashoka.edu.in (10.1.0.100)
+Host is up (0.0035s latency).
+Not shown: 995 filtered tcp ports (no-response)
+PORT     STATE  SERVICE           VERSION
+22/tcp   open   ssh               FortiSSH (protocol 2.0)
+80/tcp   open   http
+|_http-title: Did not follow redirect to https://internet.ashoka.edu.in:43443/
+| http-methods:
+|_  Supported Methods: GET HEAD POST OPTIONS
+| fingerprint-strings:
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, Help, RPCCheck, SSLSessionReq, X11Probe:
+|     HTTP/1.1 400 Bad Request
+|     Connection: close
+|   FourOhFourRequest:
+|     HTTP/1.1 301 Moved Permanently
+|     X-Frame-Options: SAMEORIGIN
+|     Content-Security-Policy: frame-ancestors 'self'
+|     X-XSS-Protection: 1; mode=block
+|     Strict-Transport-Security: max-age=0
+|     location: https://undefined:43443/nice%20ports%2C/Tri%6Eity.txt%2ebak
+|     Date: Thu, 04 May 2023 10:32:00 GMT
+|     Connection: close
+|   GetRequest, HTTPOptions, RTSPRequest:
+|     HTTP/1.1 301 Moved Permanently
+|     X-Frame-Options: SAMEORIGIN
+|     Content-Security-Policy: frame-ancestors 'self'
+|     X-XSS-Protection: 1; mode=block
+|     Strict-Transport-Security: max-age=0
+|     location: https://undefined:43443/
+|     Date: Thu, 04 May 2023 10:32:00 GMT
+|_    Connection: close
+113/tcp  closed ident
+1000/tcp open   ssl/cadlock?
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=*.ashoka.edu.in/organizationName=Ashoka University/countryName=IN
+| Subject Alternative Name: DNS:*.ashoka.edu.in, DNS:ashoka.edu.in
+| Issuer: commonName=GeoTrust TLS RSA CA G1/organizationName=DigiCert Inc/countryName=US
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2023-03-16T00:00:00
+| Not valid after:  2024-04-15T23:59:59
+| MD5:   fb638411ff5038ee87374449a2af2122
+|_SHA-1: 5a401c7cf6198227c9a44e3f69233c77f00999b3
+8090/tcp open   ssl/opsmessaging?
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=*.ashoka.edu.in/organizationName=Ashoka University/countryName=IN
+| Subject Alternative Name: DNS:*.ashoka.edu.in, DNS:ashoka.edu.in
+| Issuer: commonName=GeoTrust TLS RSA CA G1/organizationName=DigiCert Inc/countryName=US
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2023-03-16T00:00:00
+| Not valid after:  2024-04-15T23:59:59
+| MD5:   fb638411ff5038ee87374449a2af2122
+|_SHA-1: 5a401c7cf6198227c9a44e3f69233c77f00999b3
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.93%I=7%D=5/4%Time=6453899F%P=arm-apple-darwin22.1.0%r(Ge
+SF:tRequest,113,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\nX-Frame-Optio
+SF:ns:\x20SAMEORIGIN\r\nContent-Security-Policy:\x20frame-ancestors\x20'se
+SF:lf'\r\nX-XSS-Protection:\x201;\x20mode=block\r\nStrict-Transport-Securi
+SF:ty:\x20max-age=0\r\nlocation:\x20https://undefined:43443/\r\nDate:\x20T
+SF:hu,\x2004\x20May\x202023\x2010:32:00\x20GMT\r\nConnection:\x20close\r\n
+SF:\r\n")%r(HTTPOptions,113,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\nX
+SF:-Frame-Options:\x20SAMEORIGIN\r\nContent-Security-Policy:\x20frame-ance
+SF:stors\x20'self'\r\nX-XSS-Protection:\x201;\x20mode=block\r\nStrict-Tran
+SF:sport-Security:\x20max-age=0\r\nlocation:\x20https://undefined:43443/\r
+SF:\nDate:\x20Thu,\x2004\x20May\x202023\x2010:32:00\x20GMT\r\nConnection:\
+SF:x20close\r\n\r\n")%r(RTSPRequest,113,"HTTP/1\.1\x20301\x20Moved\x20Perm
+SF:anently\r\nX-Frame-Options:\x20SAMEORIGIN\r\nContent-Security-Policy:\x
+SF:20frame-ancestors\x20'self'\r\nX-XSS-Protection:\x201;\x20mode=block\r\
+SF:nStrict-Transport-Security:\x20max-age=0\r\nlocation:\x20https://undefi
+SF:ned:43443/\r\nDate:\x20Thu,\x2004\x20May\x202023\x2010:32:00\x20GMT\r\n
+SF:Connection:\x20close\r\n\r\n")%r(X11Probe,2F,"HTTP/1\.1\x20400\x20Bad\x
+SF:20Request\r\nConnection:\x20close\r\n\r\n")%r(FourOhFourRequest,136,"HT
+SF:TP/1\.1\x20301\x20Moved\x20Permanently\r\nX-Frame-Options:\x20SAMEORIGI
+SF:N\r\nContent-Security-Policy:\x20frame-ancestors\x20'self'\r\nX-XSS-Pro
+SF:tection:\x201;\x20mode=block\r\nStrict-Transport-Security:\x20max-age=0
+SF:\r\nlocation:\x20https://undefined:43443/nice%20ports%2C/Tri%6Eity\.txt
+SF:%2ebak\r\nDate:\x20Thu,\x2004\x20May\x202023\x2010:32:00\x20GMT\r\nConn
+SF:ection:\x20close\r\n\r\n")%r(RPCCheck,2F,"HTTP/1\.1\x20400\x20Bad\x20Re
+SF:quest\r\nConnection:\x20close\r\n\r\n")%r(DNSVersionBindReqTCP,2F,"HTTP
+SF:/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(DNSS
+SF:tatusRequestTCP,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x
+SF:20close\r\n\r\n")%r(Help,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConn
+SF:ection:\x20close\r\n\r\n")%r(SSLSessionReq,2F,"HTTP/1\.1\x20400\x20Bad\
+SF:x20Request\r\nConnection:\x20close\r\n\r\n");
+Device type: general purpose|WAP
+Running (JUST GUESSING): Linux 3.X|4.X|2.6.X (91%), FreeBSD 6.X (88%), Aerohive HiveOS 6.X (85%)
+OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4.4 cpe:/o:freebsd:freebsd:6.2 cpe:/o:linux:linux_kernel:2.6.32 cpe:/o:aerohive:hiveos:6.8
+Aggressive OS guesses: Linux 3.10 - 3.12 (91%), Linux 4.4 (91%), FreeBSD 6.2-RELEASE (88%), Linux 4.9 (87%), Linux 3.13 (87%), Linux 3.10 - 4.11 (86%), Linux 4.0 (86%), Linux 3.11 - 4.1 (86%), Linux 3.10 - 3.16 (85%), Linux 2.6.32 (85%)
+No exact OS matches for host (test conditions non-ideal).
+Uptime guess: 8.886 days (since Tue Apr 25 18:48:15 2023)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=262 (Good luck!)
+IP ID Sequence Generation: Busy server or unknown class
+Service Info: CPE: cpe:/o:fortinet:fortios
+
+TRACEROUTE (using port 113/tcp)
+HOP RTT      ADDRESS
+1   11.68 ms 10.2.63.252
+2   4.23 ms  internet.ashoka.edu.in (10.1.0.100)
+
+NSE: Script Post-scanning.
+Initiating NSE at 16:04
+Completed NSE at 16:04, 0.00s elapsed
+Initiating NSE at 16:04
+Completed NSE at 16:04, 0.00s elapsed
+Initiating NSE at 16:04
+Completed NSE at 16:04, 0.00s elapsed
+Read data files from: /opt/homebrew/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 168.90 seconds
+           Raw packets sent: 2078 (95.020KB) | Rcvd: 37 (2.248KB)
